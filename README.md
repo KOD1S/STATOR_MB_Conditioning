@@ -22,13 +22,9 @@ Note that these scripts require singularity installed.
 
 6. Copy and edit the file (in this repo) 'calcHOIsWithinMB_InteractionsOnly.py' with filepaths of trainingData & MCMCgraph, and the gene names you wish to condition on 1.
   
-7. Run this 'calcHOIsWithinMB_InteractionsOnly.py' in the containerised environment shell you initialised in step 5.
+7. Run 'calcHOIsWithinMB_InteractionsOnly.py' in the containerised environment shell you initialised in step 5.
    This will generate .npy files containing all estimated interactions.
 
-9. Copy and edit the file (in this repo) 
+9. Copy and edit the file (in this repo) 'createHOIsummaries_DTuplesOnly.py' with filepaths of the 3, 4 and 5 point interaction .npy files and an output file identifier.
 
-10. 
-
-5. In the same environment used to run STATOR (with singularity module loaded), run the file 
-    This will output a set of .npy files containing the interactions to the folder the file was run from.
-
+10. Run 'createHOIsummaries_DTuplesOnly.py' in the containerised environment shell, which will generate all dtuples. This script will not output any plots.
