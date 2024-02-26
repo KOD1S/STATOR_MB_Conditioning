@@ -11,11 +11,23 @@ Note that these scripts require singularity installed.
 1. Run the STATOR pipeline (available at https://github.com/AJnsm/Stator)
     This will output a trainingData.csv file and MCMCgraph.csv file, available inside the 'output' folder.
 
+2. Once the pipeline has finished running, make sure singularity is loaded (example command: module load singularity).
 
+3. Choose a folder in which to run from, and place the trainingData.csv & MCMCgraph.csv in this folder.
 
-2. Copy and edit the file (in this repo) 'calcHOIsWithinMB_InteractionsOnly.py' with filepaths of trainingData & MCMCgraph, and the gene names you wish to condition on 1.
+4. Pull the container docker://ajnsm/py_nf_container_new
+
+5. Run the command: singularity shell --bind /XXXX:/mnt py_nf_container_new.sif
+   where XXXX is the path to the folder you are running from.
+
+6. Copy and edit the file (in this repo) 'calcHOIsWithinMB_InteractionsOnly.py' with filepaths of trainingData & MCMCgraph, and the gene names you wish to condition on 1.
   
-3. Run this file in the environment used to run STATOR (load singularity
+7. Run this 'calcHOIsWithinMB_InteractionsOnly.py' in the containerised environment shell you initialised in step 5.
+   This will generate .npy files containing all estimated interactions.
+
+9. Copy and edit the file (in this repo) 
+
+10. 
 
 5. In the same environment used to run STATOR (with singularity module loaded), run the file 
     This will output a set of .npy files containing the interactions to the folder the file was run from.
